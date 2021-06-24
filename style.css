@@ -1,0 +1,720 @@
+/* 
+    1.POSICIONAMIENTO
+    2.MODELO DE CAJA
+    3.TIPOGRAFIA
+    4.VISUALES
+    5.OTRO
+*/
+/* ESTILOS Y TAMAÑOS DE FUENTE: 
+DM Sans:
+Regular 400
+Medium 500
+Bold 700
+
+Inter:
+Light 300
+Medium 500 */
+
+/* FIGMA es la base de nuestro proyecto. de ahi sacamos los estilos que tenemos que darle a las etiquetas */
+
+:root {
+    /* Colores */
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D5;
+    --secondary-blue:   #1A9AF7;
+    --soft-blue:    #E7F5FF;
+    --warm-black:   #201E1C;
+    --black:    #282623;
+    --grey:     #BABABA;
+    --off-white:    #FAF8F7;
+    --just-white:   #FFFFFF;   
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Se llama a la etiqueta header */
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    /* min-width indica que el width no se va a hacer mas chico de 320px que es la dimension mas chica en celulares */
+    min-width: 320px; 
+    height: 334px;
+    text-align: center;
+    /* se implementan dos colores difuminados con linear-gradient */
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7651A 100%);
+}
+
+/* Se usa espeficidad para la etiqueta. se le da dimensiones */
+header img {
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    /* align-self es la forma de centrar un elemento que tenga un contenedor con display flex */
+    align-self: center;
+}
+
+/* Se le van agregar estilos al contenedor div. se hace llamando a la clase */
+.header--title--container {
+    /* Se va a usar un width del 90% entre 288px y 900px.(No se va hacer mas chico ni mas grande que estos valores) */
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    /* Se usa margin-top para separar el contenedor del logotipo */
+    margin-top: 40px;
+    text-align: center;
+    /* Se usa align-self para centrar y que el espacio sea igual en derecha e izquierda */
+    align-self: center;
+}
+
+/* Se llama a h1 de esta manera para ser mas especifico */
+.header--title--container h1 {
+    /*(font-size)Tamaño de fuente rem=24px */
+    font-size: 2.4rem;
+    /*(font-weight)Ancho de la fuente */
+    font-weight: bold;
+    /*(line-height)Dimension que tendra entre lineas  */
+    line-height: 2.6rem;
+    /*Color de la fuente */
+    color: var(--just-white);
+}
+
+/*Se llama la clase header para acceder a parrafo */
+.header--title--container p {
+    /*(margin-top)Para separarlo del h1 */
+    margin-top: 45px;
+    font-size: 1.2rem;
+    font-weight: 500px;
+    line-height: 1.8rem;
+    color: #ffd6b0;
+}
+
+.header--title--container .header--button {
+    position: absolute;
+    /*Regla css(calc()). se le dice que empuje el boton al centro con el 50% pero le reste 115px para que se logre posicionar en el centro.*/
+    left: calc(50% - 115px);
+    top: 270px;
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--off-white);
+    /* Sombra del boton */
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.40);
+    /* (border:none)Quita un borde que viene definido */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    /*(text-decoration)Quitamos el subrayado */
+    text-decoration: none;
+    color: var(--black);
+}
+
+/* Se posicionara el icono que va en el boton por medio de span */
+.header--button span {
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    /* Se va agregar el icono(flecha) que va en el boton */
+    background-image: url('./assets/icons/down-arrow.svg');
+}
+
+
+
+main {
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    background-color: var(--off-white);
+}
+
+/* Se le agregan los estilos al contenedor de la seccion de itercambio(exchange) */
+.main--exchange--container {
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+/* Se le agregan estilos al contenedor del texto de esta seccion*/
+.main--exchange--container__title {
+    width: 90%;
+    /*Se va a limitar el crecimiento (con min y max)*/
+    min-width: 288px;
+    max-width: 900px;
+    /*Nos va ayudar a posicionar el contenedor siempre en el centro*/
+    margin: 0 auto;
+}
+
+.main--exchange--container .backgroundImg {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url('./assets/img/Bitcoin.svg');
+    /*Propiedades para que la imagen de fondo (background-image) no se deforme si crece la pantalla*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*Se le agregan estilos al texto de este contenedor (titulo h2)*/
+.main--exchange--container h2 {
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+/* Se va a estilar la etiqueta de p */
+.main--exchange--container p {
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    /* altura de la fuente entre lineas */
+    line-height: 1.6rem;
+    color: #757575;
+}
+
+
+
+/* Se va a estilar el contenedor de las tablas para que tenga un scroll horizontal */
+.main-tables-container {
+    display: flex;
+    /* Esta propiedad(gap) genera un espacio entre los elementos(tarjetas) */
+    gap: 25px;
+    /* Este contenedor debe ser mas alto que las tarjetas */
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+/* Se le van a empeszar a dar estilos al contenedor general de la tabla*/
+.main-currency-table {
+    /* Esta propiedad hace que el navegador centre el scroll al elemento que estamos viendo. (no se queda en la mitad) */
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 300px;
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    /* Por el efecto scroll toca central el contenedor con el espacio interno usando padding-left */
+    padding-left: 20px;
+    font-family: "Inter", sans-serif;
+}
+.main-commission-table {
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 300px;
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    /* Por el efecto scroll toca central el contenedor con el espacio interno usando padding-left */
+    padding-right: 20px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Por especifidad se empieza por la clase de mi contenedor principal y despues la clase del titulo(monedas) */
+.main-currency-table .currency-table--title {
+    /*Se usa(margin-bottom) para separar el titulo(monedas) de la tabla*/
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--bitcoin-orange);
+}
+
+/* Se copia el mismo codigo para la tabla de comisiones color azul */
+.main-commission-table .commission-table--title {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--secondary-blue);
+}
+
+/* Se le van agregar estilos al contenedor directo de la tabla */
+.currency-table--container, .commission-table--container {
+    width: 90%;
+    /* se limita el crecimiento */
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+/* Se le va agregar estilos a al etiqueta tabla */
+.currency-table--container table, .commission-table--container table {
+    /* Asi la tabla va ocupar todo el espacio que tiene su contenedor padre */
+    width: 100%;
+    height: 100%;
+}
+
+.currency-table--container td, .commission-table--container td {
+    /*Se posicionan los datos de las filas.Cada dato de cada fila ocupara el 50% para un total de 100. */
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    /* Se le agrega color al texto */
+    color: var(--grey);
+    /* Se le da color blanco al fondo de la tabla */
+    background-color: var(--just-white);
+}
+
+/* Se usan las clases para redondear las esquinas (top,bottom, left,right) */
+/* Se empieza por el lado izquierdo arriba (top-left) */
+.currency-table--container .table__top-left, .commission-table--container .table__top-left {
+    border-radius: 15px 0 0 0;
+}
+
+.currency-table--container .table__top-right, .commission-table--container .table__top-right {
+    border-radius: 0 15px 0 0;
+}
+
+.currency-table--container .table__bottom-left, .commission-table--container .table__bottom-left {
+    border-radius: 0 0 0 15px;
+}
+
+.currency-table--container .table__bottom-right, .commission-table--container .table__bottom-right {
+    border-radius: 0 0 15px 0;
+}
+
+/* Se le agregan estilos a los datos de la columna derecha de la tabla */
+.currency-table--container .table__right, .commission-table--container .table__right {
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+
+/* Se va agregar el icono(treding-down) a la clase down(de la etiqueta span) */
+/* Se posicionara y añadira estilos a cada simbolo de cada dato */
+.currency-table--container .down {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/trending-down.svg');
+    /*Propiedades para que la imagen de fondo (background-image) no se deforme si crece la pantalla*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.currency-table--container .up {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/trending-up.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Se van agregar estilos a la fecha de actualizacion bajo la tabla */
+.currency-table-date {
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--soft-orange);
+    border-radius: 8px;
+}
+
+.commission-table-date {
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: #E7F5FF;
+    border-radius: 8px;
+}
+
+/* Se le agregan estilos al texto de este contenedor de actualizacion */
+.currency-table-date p, .commission-table-date p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: var(--warm-black);
+}
+
+
+/* Se le agregan estilos al contenedor de la seccion de las tarjetas */
+.main-product-detail {
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    /* (height)Para que el contenido mismo de esta seccion marque el tamaño de altura */
+    height: auto;
+    /* El padding va a tener 20px de arriba-abajo y 10px de izq-der */
+    padding: 20px 10px;
+    /* Color del fondo de esta seccion */
+    background-color: var(--warm-black);
+}
+
+/* Se le da dimensiones al logotipo */
+.product-detail--batata-logo {
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    /* En top se le agrega -10px para que el icono se posicione entre dos secciones(sobre los contenedores) */
+    top: -10px;
+    /* Con la funcion calc(), se le quita 20px al tamaño del elemento y pueda posicionarse en el centro */
+    left: calc(50% - 20px);
+    background-image: url('./assets/icons/batata.svg');
+}
+
+/* Se le van a dar estilos al contenedor de las fuentes.(en este contenedor viene el titulo y parte del contenido) */
+.product-detail--title {
+    width: 90%;
+    min-width: 288px;
+    /* auto para que el mismo texto delimite su crecimiento */
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+/* Se va estilar el texto del titulo del contenedor */
+.product-detail--title h2 {
+    /* Para poder separar el titulo del parrafo */
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white);
+}
+
+/* Se va a estilar el texto del parrafo del contenedor */
+.product-detail--title p {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+/* Se van a generar estilos en la tarjeta */
+.product-detail--card {
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    height: 150px;
+    /* Este margin sera 15px (arriba-abajo) y auto (izq-der) */
+    margin: 15px auto;
+    /* Este padding sera interno, para que pueda posicionarse su contenido */
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    /* Se le agrega sombra al borde del contenedor de la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+/* Se va agregar el icono del reloj y sus dimenciones */
+.product-detail--card .clock {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    /* con margin-bottom se separa el icono del reloj del texto */
+    margin-bottom: 10px;
+    background-image: url('./assets/icons/clock.svg');
+    /*Propiedades para que la imagen (background-image) no se deforme si crece la pantalla*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* Se agrega y posiciona icono eye */
+.product-detail--card .eye {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    /* con margin-bottom se separa el icono del reloj del texto */
+    margin-bottom: 10px;
+    background-image: url('./assets/icons/eye.svg');
+    /*Propiedades para que la imagen (background-image) no se deforme si crece la pantalla*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.product-detail--card .dollar {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    /* con margin-bottom se separa el icono del reloj del texto */
+    margin-bottom: 10px;
+    background-image: url('./assets/icons/dollar-sign.svg');
+    /*Propiedades para que la imagen (background-image) no se deforme si crece la pantalla*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.product-detail--card .check {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    /* con margin-bottom se separa el icono del reloj del texto */
+    margin-bottom: 10px;
+    background-image: url('./assets/icons/check-circle.svg');
+    /*Propiedades para que la imagen (background-image) no se deforme si crece la pantalla*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Se le va agregar estilos a la clase del Titulo del texto */
+.product--card-title {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--just-white);
+}
+/* Se le agregan estilos a la fuente del parrafo */
+.product--card-body {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+
+
+/* Se agrega una seccion en la que va una imagen de comodin */
+.bitcoin-img-container {
+    width: 100%;
+    min-width: 320px;
+    /* 50% de altura */
+    height: 50vh;
+    /* Se trae esta imagen 2x porque es mas grande y asi, si se agranda la pantalla no se ve tan pixelada */
+    background-image: url('./assets/img/bitcoinbaby2x.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* Se le agregan estilos (fuente) al titulo del contenedor(se posiciona) */
+.bitcoin-img-container h2 {
+    padding-top: 60px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    text-align: center;
+    color: var(--just-white);
+}
+
+
+
+/* Se aplicaran los estilos a la seccion principal (contenedor padre) de planes */
+.main-plans-container {
+    /* abarcara toda la pantalla por ser el contenedor principal */
+    width: 100%;
+    min-width: 320px;
+    padding-bottom: 70px;
+    text-align: center;
+    background-color: var(--just-white);
+}
+.plans--title {
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.plans--title h2 {
+    /* este padding le da un espacio interno al contenedor que lo separa de la img de arriba */
+    padding-top: 50px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+.plans--title p {
+    /* Para separarlo del h2 */
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+
+
+/* Se va a estilar el contenedor del scroll slider */
+.plans-container--slider {
+    /* Con (flex) se genera un scroll horizontal */
+    display: flex;
+    /* Esta propiedad(gap) genera un espacio entre los elementos(tarjetas) */
+    gap: 25px;
+    /* Este contenedor debe ser mas alto que las tarjetas */
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+/* Se estila el scrollbar. */
+.plans-container--slider::-webkit-scrollbar {
+    background-color: var(--soft-orange);
+    height: 3px;
+}
+/* Se estila el scrollbar.(El grosor de la linea horizontal) */
+.plans-container--slider::-webkit-scrollbar-thumb {
+    background-color: var(--bitcoin-orange);
+    height: 3px;
+}
+/* Se va a estilar el contenedor de la tarjeta */
+.plans-container--card {
+    /* La posicion es relative porque viene una etiqueta de p que va salir del contenedor usando postion absolute. */
+    /* Para que este efecto suceda, el contenedor padre debe tener position relative  */
+    position: relative;
+    /* Esta propiedad hace que el navegador centre el scroll al elemento que estamos viendo. (no se queda en la mitad) */
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 190px;
+    max-width: 300px;
+    height: 250px;
+    /* Se deja de esta manera (auto) por el excedente de caja a los lados. asi se centra el contenedor */
+    margin: 50px auto 0;
+    /* El padding centrara un poco su contenido de manera horizontal. Asi tendra un pequño espacio en el borde */
+    padding: 0 15px;
+    background-color: var(--just-white);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.45);
+}
+/* Se va a estilar el contenedor de recomendado dentro de esta seccion de planes */
+.recommended {
+    /* Position absolute para hacer el efecto que salga del contenedor padre */
+    position: absolute;
+    /* Dimensiones */
+    width: 120px;
+    height: 31px;
+    /* Con padding se centra el texto acomodando el espacio interno */
+    padding: 6px;
+    /* top va a hacer que el contenedor se salga directamente de su padre */
+    top: -15px;
+    /* Se calcula para centrar el contenedor horizontalmente */
+    left: calc(50% - 60px);
+    font-size: 1.2rem;
+    /* color de fondo del contenedor */
+    background: var(--bitcoin-orange);
+    border-radius: 8px;
+    /* color de la fuente */
+    color: var(--just-white);
+}
+/* Se estila el titulo de la tarjeta(plan anual) */
+.plan-card--title {
+    /* para darle espacio */
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #000000;
+}
+/* Se agrega el precio y se posiciona el texto */
+.plan-card--price {
+    /* Relative para que el ($) se posicione por fuera en el siguiente bloque con position absolute*/
+    position: relative;
+    padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 6.3rem;
+    color: #000000;
+}
+/* Se agrega el signo($) y se posiciona */
+.plan-card--price span {
+    /* con posicion aboslute, top y left, se posicionara el signo($) en la parte superior */
+    position: absolute;
+    top: -7px;
+    left: calc(50% - 40px);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 31px;
+    color: #000000;
+}
+/* Se posiciona el sino($) en las otras tarjetas con especifidad */
+.plan-card--price .plus {
+    position: absolute;
+    top: -7px;
+    left: calc(50% - 50px);
+}
+.plan-card--price .traditional {
+    position: absolute;
+    top: -7px;
+    left: calc(50% - 45px);
+}
+/* Se le agregan estilos al texto de (*ahorras) */
+.plan-card--saving {
+    font-size: 1.2rem;
+    color: #757575;
+}
+/* Se va a posicionar y agregar estilos al boton */
+.plan-card--ca {
+    width: 150px;
+    height: 48px;
+    margin-top: 20px;
+    background-color: #faf8f7;
+    /* Se le agrega un borde solido de color naranja */
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--black);
+}
+/* Se agregara el icono al contenedor del boton */
+/* Se trae la clase que es el elemento, y el span es como el hijo directo de esta clase */
+.plan-card--ca span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('./assets/icons/orange-right-arrow.svg');
+    /* esta propiedad se usa para alinear el texto con el icono */
+    vertical-align: text-bottom;
+}
+
+
+/* FOOTER */
+footer {
+    /* Este display flex va a colocar las dos secciones una, frente a la otra */
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7651A 100%);
+}
+footer section {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+footer .left ul {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+.left li {
+    margin: 10px 0;
+}
+.left a {
+    text-decoration: none;
+    color: var(--just-white);
+}

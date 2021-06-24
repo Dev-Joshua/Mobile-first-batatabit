@@ -1,0 +1,27 @@
+/* Cuando empiecen los 930 px en la pantalla va aplicar estos estilos */
+
+/* Se dividira el contenedor de las tablas para que queden enfrente de la otra  */
+.main-tables-container {
+    display: flex;
+    width: 930px;
+    margin: 0 auto;
+}
+/* Se van a dividir las tarjetas del producto en el espacio de su contenedor */
+.product-cards--container {
+    /* Con este display se posicionan enfrente de la otra */
+    display: flex;
+    /* Esta propiedad(wrap) se usa para que el contenido se acomode si tenemos(display:flex), asi no causara un overflow */
+    flex-wrap: wrap;
+    width: 930px;
+    /* Con esta propiedad(margin) se le dice al navegador que acomode solo el contenido si crece la pantalla */
+    margin: 0 auto;
+}
+
+/* Se va a centrar el contenido del contenedor de los planes(tarjetas), con (justify-content).  */
+.plans-container--slider {
+    /* No hay necesidad de agregar display flex porque este contenedor ya lo tiene en los estilos originales (style.css) */
+    justify-content: center;
+    /* Se disminuira el espacio horizontal entre tarjetas con (gap) */
+    gap: 10px;
+    padding: 0 50px;
+}   
